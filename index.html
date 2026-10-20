@@ -2,39 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width," initial-scale="1.0">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=inter:wght @400;500&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-   
-    <title>Pay Joy Mobile Repair</title>
-    <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="images/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>Pay Joy Mobile Repair</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
       
-          <nav class="navbar">
-              <div class="logo">
-                <img src="images/payjoylogo.png" alt="PAY JOY">
-              </div>
-            <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#whypayjoy">Why PayJoy</a></li>
-          <li class="dropdown">
-            <a href="#services" class="dropbtn">Services</a>
-            <div class="dropdown-content">
-              <a href="#phone-repair">Phone Repair</a>
-              <a href="#phone-flashing">Phone Flashing</a>
-              <a href="#apple-id">Apple ID</a>
-              <a href="#screen-replacement">Screen Replacement</a>
-              <a href="#battery-replacement">Battery Replacement</a>
-            </div>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#contact-us">Contact Us</a></li>
-          </ul>   
-             </nav>
+        <nav class="navbar">
+  <div class="logo">
+    <a href="#home"><img src="images/payjoylogo.png" alt="PAY JOY"></a>
+  </div>
+
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#whypayjoy">Why PayJoy</a></li>
+    <li class="dropdown">
+      <a href="#services" class="dropbtn">Services <i class="fa-solid fa-chevron-down"></i></a>
+      <div class="dropdown-content">
+        <a href="#phone-repair">Phone Repair</a>
+        <a href="#phone-flashing">Phone Flashing</a>
+        <a href="#apple-id">Apple ID</a>
+        <a href="#screen-replacement">Screen Replacement</a>
+        <a href="#battery-replacement">Battery Replacement</a>
+      </div>
+    </li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact-us">Contact Us</a></li>
+  </ul>
+</nav>
       
 
       <main>
@@ -476,6 +481,33 @@
                     
                     
         </main>            
- </section>    
+ </section>
+ <script>
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+  const icon = menuBtn.querySelector("i");
+
+  menuBtn.addEventListener("click", () => {
+    const open = navLinks.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", open);
+    icon.className = open ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+  });
+
+  // On phones, tapping "Services" opens/closes its list
+  document.querySelector(".dropbtn").addEventListener("click", (e) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      e.currentTarget.parentElement.classList.toggle("show");
+    }
+  });
+
+  // Close the menu after tapping any other link
+  navLinks.querySelectorAll("a:not(.dropbtn)").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      icon.className = "fa-solid fa-bars";
+    });
+  });
+</script>    
  </body>
 </html>

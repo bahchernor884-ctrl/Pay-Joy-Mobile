@@ -6,6 +6,7 @@
   /* Smooth scrolling instead of a sudden jump */
    html {
       scroll-behavior: smooth;
+      scroll-padding-top: 70px;
    }
 
  body {
@@ -113,8 +114,8 @@ nav.navbar {
     z-index: 1000;
     padding: 0 20px;
  }
-    
- .logo img {
+
+.logo img {
     width: 65px;
     height: 55px;
     object-fit: contain;
@@ -122,82 +123,132 @@ nav.navbar {
     box-shadow: 0 0 8px rgba(0,0,0,0.3);
  }
 
- nav.navbar ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    /* remove position: fixed, top, width, background-color, z-index from here - nav now handles it */
- }
- nav ul li a {
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #d6ddff;
+}
+
+/* Services dropdown (desktop: opens on hover) */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 210px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  font-family: "Inter", sans-serif;
+  color: #333333;
+}
+
+.dropdown-content a:hover {
+  background: #eef1fb;
+  color: #16213e;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hamburger button (hidden on desktop) */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+ padding: 4px;
+ cursor: pointer;
+}
+
+#menu-btn img {
+   width: 32px;
+   height: 32px;
+   display: block;
+   filter: brightness(0) invert(1);
+}
+
+/* Phones and small tablets */
+@media (max-width: 768px) {
+  .menu-btn {
     display: block;
-    color: #ffffff;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    position: relative; 
- }
- nav.navbar ul li a {
-    position: relative;
-    display: inline-block;
-    border-radius: 12px;
- }
+  }
 
- /* Blue underline */
- nav.navbar ul li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    background-color: #008cff;
-    transition: width 0.3s ease;
- }
-
- /* When hovering */
- nav.navbar ul li a:hover::after {
-    width: 100%;
- }
-
- /* text color */
- nav.navbar ul li a:hover {
-    color: #008cff;
-    
- }
-
- 
-  li a, .dropbtn {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
- }
-
- li.dropdown {
-    display: inline-block;
- }
- .dropdown-content {
+  .nav-links {
     display: none;
     position: absolute;
-    background-color: #16213e;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    border-radius: 35px;
- }
- .dropdown-content a {
-    color: white;
-    padding: 12px 16px;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #16213e;
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links > li > a {
     display: block;
-    text-align: left;
- }
- 
- .dropdown:hover .dropdown-content {
+    padding: 15px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* Dropdown opens by tap, not hover */
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown.show .dropdown-content {
     display: block;
- }
+  }
+
+  .dropdown-content {
+    position: static;
+    border-radius: 0;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .dropdown-content a {
+    color: #ffffff;
+    padding: 13px 24px 13px 40px;
+  }
+
+  .dropdown-content a:hover {
+    background: #eef1fb;
+    color: #16213e;
+  }
+}
 
  .about {
    padding: 100px 5%;
