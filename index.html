@@ -198,7 +198,7 @@
           
                 <div class="team__grid">
 
-                <div class="team-card team-card--owne">
+                <div class="team-card team-card--owner">
                   <span class="owner-badge">Owner &amp; Boss</span>
                   <img src="images/papa.jpg" alt="Euctace During" class="team-photo">
                   <h3 class="team-name">Eustace During</h3>
@@ -284,9 +284,12 @@
                     Chat with Raymond
                     </a>
                   </div>
+          </div>
+          </section>
+
                  <section class="contact-us" id="contact-us">
                  <div class="contact-container">
-                  <h2 class="contact-title">Contact &amp; Book a Repiar</h2>
+                  <h2 class="contact-title">Contact &amp; Book a Repair</h2>
                   <p class="contact-intro">Tell us what's wrong with your phone and we'll get back to you.</p>
                    
                  <div class="contact-grid">
@@ -294,7 +297,7 @@
                   <!-- Booking Form -->
                    <form class="contact-form" id="bookingform">
                     <label for="name">Your Name</label>
-                    <input type="text" id="name" placeholder="e.g. Chernor Bah" autocomplete required> <br>
+                    <input type="text" id="name" placeholder="e.g. Chernor Bah" autocomplete="name" required> <br>
 
                      <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" placeholder="e.g. 072 497013" required> <br>
@@ -331,7 +334,7 @@
                     referrerpolicy="no-refferrer-when-downgrade"
                     title="Pay Joy Mobile location on Google Maps">
                   </iframe>
-                   </div>
+                   
 
                    <div class="info-card">
                     <p><strong>Address:</strong> 7 Short Street, Kenema</p>
@@ -347,76 +350,80 @@
                      </div>
                    </section>
 
-              
-            <script>
-              // When form is submitted (button tapped)...
-              document.getElementById("bookinkform").addEventListener("mouseover", function (e) {
+              <script>
+  const form = document.getElementById("bookingform");
 
-                // ...stop the page from reloading, which is what a form normally does
-                 e.preventDefault();
+  form.addEventListener("submit", function (e) {
+    // Stop the page from reloading
+    e.preventDefault();
 
-                // Build the message, joining the text together with +
-                // name.value means "whatever the customer typed in the box with id name"
-                // %0A means "start a new line"
-                const text =
-                "Hello Pay Joy Mobile, I'd Like to book a repair.%0A" +
-                "Name: " + encodeURIComponent(name.value) + "%0A" +
-                 "Phone: " + encodeURIComponent(phone.value) + "%0A" +
-                  "Model: " + encodeURIComponent(model.value) + "%0A" +
-                   "Repair: " + encodeURIComponent(repair.value) + "%0A" +
-                   "Details: " + encodeURIComponent(message.value);
-                   alert("button tapped!");
+    // Grab what the customer typed in each box
+    const nameValue = document.getElementById("name").value;
+    const phoneValue = document.getElementById("phone").value;
+    const modelValue = document.getElementById("model").value;
+    const repairValue = document.getElementById("repair").value;
+    const messageValue = document.getElementById("message").value;
 
-                   // Open WhatsApp with your number and this message
-                   window.open("https://wa.me/23272600027?text=" + text, "_blank");
-              });
-            </script>
+    // Build the message (\n means "new line")
+    const text =
+      "Hello Pay Joy Mobile, I'd like to book a repair.\n" +
+      "Name: " + nameValue + "\n" +
+      "Phone: " + phoneValue + "\n" +
+      "Model: " + modelValue + "\n" +
+      "Repair: " + repairValue + "\n" +
+      "Details: " + messageValue;
 
-            <script>
-              document.querySelector('a[href=#contact-us]').addEventListener("click", function () {
-                setTimeout(function () {
-                  document.getElementById("name").focus({preventScroll: true});
-                }, 600);
-              });
-            </script>
+    // Open WhatsApp with your number and the message
+    window.open(
+      "https://wa.me/23272600027?text=" + encodeURIComponent(text),
+      "_blank"
+    );
+  });
+
+  // When someone taps a "Book a Repair" link, put the cursor in the name box
+  document.querySelectorAll('a[href="#contact-us"]').forEach(function (link) {
+    link.addEventListener("click", function () {
+      setTimeout(function () {
+        document.getElementById("name").focus({ preventScroll: true });
+      }, 600);
+    });
+  });
+</script>
+
+            
+            
 
               <footer class="footer">
-                <div class="footer-container">
-              
-                  <div class="footer-col">
-                    <h3>PAY JOY MOBILE</h3>
-                    <P>Fast, honest phone repairs in Kenema.</P>
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>Pay Joy Mobile</h4>
+      <p>Fast, honest phone repairs in Kenema.</p>
+    </div>
 
-                    <div class="footer-col">
-                      <h4>Quick Links</h4>
-                      <ul>
-                      <li><a href="#home"></a>Home</li>
-                         <li><a href="#team"></a>Our Team</li>
-                           <li><a href="#contact"></a>Book a Repair</li>
-                      </ul>
-                      </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#contact-us">Book a Repair</a></li>
+      </ul>
+    </div>
 
-                      <div class="footer-col">
-                        <h4>Visit Us</h4>
-                        <p>7 Short Street, Kenema</p>
-                        <p>Phone: 072600027</p>
-                        <p>Open: 7:00 Am- 8:00 PM</p>
-                        <a class="footer-whatsapp" href="htpps://wa.me/2327260027" target="_blank" rel="noopener">
-                          <i class="fa brands fa-whatsapp"></i>
-                          Chat on Whatsapp
-                        </a>
-                      </div>
-            
-                         </div>
+    <div class="footer-col">
+      <h4>Visit Us</h4>
+      <p>7 Short Street, Kenema</p>
+      <p>Phone: 072600027</p>
+      <p>Open: 7:00 AM - 8:00 PM</p>
+      <a class="footer-whatsapp" href="https://wa.me/23272600027" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </div>
 
-                         <div class="footer-bottom">
-                          <p>&copy; 2026 Pay Joy Mobile. All Right reserved</p>
-                         </div>
-  
-                  </div>  
-                  </footer>
-
-
+  <div class="footer-bottom">
+    <p>&copy; 2026 Pay Joy Mobile. All rights reserved.</p>
+  </div>
+</footer>
 
 
 
