@@ -783,32 +783,57 @@ section,
    }
 
    .footer {
-      background: #1a1a1a;
-      color: #ddd;
-      padding: 60px 20px 0;
-   }
-
-   .footer-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-   }
-
-.footer h3 {
-   color: #fff;
-   margin: 0 0 12px;
+  background: #1a2140;
+  color: #fff;
+  padding: 40px 20px 0;
+  width: 100%;
 }
 
-.footer h4 {
-   color: #fff;
-   margin: 0 0 12px;
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
 }
 
-.footer p {
-   margin: 0 0 8px;
-   line-height: 1.5;
+.footer-col h4 {
+  margin-bottom: 12px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li,
+.footer-col p {
+  margin-bottom: 8px;
+}
+
+.footer-col a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-whatsapp {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 14px;
+  background: #25d366;
+  border-radius: 6px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding: 15px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 
