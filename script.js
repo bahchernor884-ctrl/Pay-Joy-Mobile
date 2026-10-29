@@ -1,22 +1,20 @@
 console.log("JavaScript is connected!");
 
  const menuBtn = document.getElementById("menuBtn");
-  const navLinks = document.getElementById("navLinks");
-  const icon = menuBtn.querySelector("i");
+const navLinks = document.getElementById("navLinks");
 
-  menuBtn.addEventListener("click", () => {
-    const open = navLinks.classList.toggle("open");
-    menuBtn.setAttribute("aria-expanded", open);
-    icon.className = open ? "fa-solid fa-xmark" : "fa-solid fa-bars";
-  });
+menuBtn.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open);
+});
 
-  // On phones, tapping "Services" opens/closes its list
-  document.querySelector(".dropbtn").addEventListener("click", (e) => {
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      e.currentTarget.parentElement.classList.toggle("show");
-    }
+  // Close the menu after tapping any other link
+navLinks.querySelectorAll("a:not(.dropbtn)").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
   });
+});
 
   // Close the menu after tapping any other link
   navLinks.querySelectorAll("a:not(.dropbtn)").forEach((link) => {
