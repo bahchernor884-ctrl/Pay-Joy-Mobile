@@ -16,13 +16,13 @@ navLinks.querySelectorAll("a:not(.dropbtn)").forEach((link) => {
   });
 });
 
-  // Close the menu after tapping any other link
-  navLinks.querySelectorAll("a:not(.dropbtn)").forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("open");
-      icon.className = "fa-solid fa-bars";
-    });
-  });
+// On phones, tapping "Services" opens/closes its list
+document.querySelector(".dropbtn").addEventListener("click", (e) => {
+  if (window.innerWidth <= 768) {
+    e.preventDefault();
+    e.currentTarget.parentElement.classList.toggle("show");
+  }
+});
 
 
 const form = document.getElementById("bookingform");
