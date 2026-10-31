@@ -631,8 +631,12 @@ section,
    margin: 0 auto;
 }
 
-/* Desktop: 4 per row */
+
 .team-card {
+flex: 0 0 calc((100% - 48px) / 3);
+max-width: 0 0 calc((100% - 48px) / 3);
+box-sizing: border-box;
+
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -642,6 +646,20 @@ section,
    padding: 28px 20px;
    box-shadow: 0 4px 14px rgba(136, 130, 130, 0.8);
    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+@media (max-width: 900px) {
+   .team-card {
+      flex: 0 0 calc((100% - 24px) / 2);
+      max-width: 0 0 calc((100% - 24px) / 2);
+   }
+}
+
+@media (max-width: 600px) {
+   .team-card {
+      flex: 0 0 100%;
+      max-width: 100%;
+   }
 }
 
 .team-card .whatsapp-btn {
