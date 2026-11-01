@@ -13,6 +13,7 @@ navLinks.querySelectorAll("a:not(.dropbtn)").forEach((link) => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("open");
     menuBtn.setAttribute("aria-expanded", "false");
+    document.querySelectorAll(".dropdown.show").forEach((d) => d.classList.remove("show"));
   });
 });
 
