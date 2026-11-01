@@ -160,3 +160,58 @@ team.forEach(function (person) {
 });
 
 
+const reviews = [
+  {
+    name: "Mohamed Kamara",
+    detail: "Screen replacement",
+    rating: 5,
+    text: "My screen was badly cracked and they changed it the same day. It looks brand new. Very honest price too."
+  },
+  {
+    name: "Aminata Sesay",
+    detail: "Phone flashing",
+    rating: 5,
+    text: "My phone was stuck on the logo and I thought it was finished. They flashed it and now it works perfectly. Thank you PayJoy!"
+  },
+  {
+    name: "Ibrahim Bangura",
+    detail: "Battery replacement",
+    rating: 4,
+    text: "My battery used to die before midday. After the new battery, it now lasts the whole day. Good service."
+  },
+  {
+    name: "Fatmata Conteh",
+    detail: "Charging port repair",
+    rating: 5,
+    text: "My phone would not charge unless I held the cable in a certain way. They fixed the port quickly and it charges fast now."
+  },
+  {
+    name: "Alhaji Koroma",
+    detail: "Account recovery",
+    rating: 5,
+    text: "I was locked out of my phone after a reset. The team helped me get back in without losing anything important."
+  },
+  {
+    name: "Mariama Jalloh",
+    detail: "Software update",
+    rating: 4,
+    text: "My phone was slow and always hanging. After the software update it runs smooth again. I will come back."
+  }
+];
+
+const reviewsGrid = document.getElementById("reviewsGrid");
+
+reviews.forEach(function (review) {
+  const stars = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+
+  const card = document.createElement("div");
+  card.className = "review-card";
+  card.innerHTML =
+    '<div class="review-stars">' + stars + '</div>' +
+    '<p class="review-text">' + review.text + '</p>' +
+    '<p class="review-name">' + review.name + '</p>' +
+    '<p class="review-detail">' + review.detail + '</p>';
+
+  reviewsGrid.appendChild(card);
+});
+

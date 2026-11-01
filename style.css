@@ -773,6 +773,65 @@ box-sizing: border-box;
        }
 }
 
+.reviews {
+  scroll-margin: 90px;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.reviews-title {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.reviews-intro {
+  color: #666;
+  margin-bottom: 36px;
+}
+
+.reviews__grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.review-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+}
+
+.review-stars {
+  color: #f5b301;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.review-text {
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.review-name {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.review-detail {
+  color: #777;
+  font-size: 0.9rem;
+}
+
 .shop-status {
    display: inline-block;
    padding: 6px 14px;
