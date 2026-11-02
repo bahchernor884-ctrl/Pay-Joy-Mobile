@@ -98,7 +98,7 @@ if (nameValue.trim() === ""  || phoneValue.trim() === "") {
     role: "Phone Flashing &amp; Mobile Solutions",
     bio: "Mobile Technician specializing in phone flashing, FRP bypass, and Android software solutions across a wide range of devices.",
     photo: "images/odumodu.jpg",
-    phone: "23276536252",
+    phone: "23288922843",
     first: "Ibrahim"
   },
   {
