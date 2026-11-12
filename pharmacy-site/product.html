@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>City Stars Pharmacy - Products</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <style>
+      .cart-count {
+        display: inline-block;
+        min-width: 1.4em;
+        margin-left: 4px;
+        padding: 0.1em 0.35em;
+        border-radius: 999px;
+        background: #a7f3d0;
+        color: #134e4a;
+        font-size: 0.8em;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .cart-section {
+        margin-top: 36px;
+        padding: 24px;
+        border: 1px solid #d1d5db;
+        border-radius: 16px;
+        background: #fff;
+      }
+
+      .cart-section h2 {
+        margin-bottom: 12px;
+        color: #134e4a;
+      }
+
+      #cart-items {
+        display: grid;
+        gap: 10px;
+        margin: 12px 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      #cart-items li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .cart-remove,
+      .whatsapp-order {
+        padding: 9px 14px;
+        border: 0;
+        border-radius: 6px;
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .cart-remove {
+        background: #f3f4f6;
+        color: #374151;
+      }
+
+      .cart-total {
+        margin: 14px 0;
+        font-weight: bold;
+      }
+
+      .whatsapp-order {
+        background: #16a34a;
+        color: white;
+        font-weight: bold;
+      }
+
+      .whatsapp-order:disabled {
+        background: #9ca3af;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html">City Stars <span>Pharmacy</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle-icon" aria-hidden="true"></span>
+        <span class="menu-toggle-label">Menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li>
+            <a href="product.html" aria-current="page">
+              Products <span id="cart-count" class="cart-count" aria-live="polite">0</span>
+            </a>
+          </li>
+          <li><a class="nav-contact" href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="product-page">
+    <div class="product-heading">
+      <p class="product-label">City Stars Pharmacy</p>
+      <h1>Our Products</h1>
+      <p>Browse our selection of healthcare essentials.</p>
+    </div>
+
+    <div class="product-search">
+      <label for="search">Find a product</label>
+      <input
+        type="search"
+        id="search"
+        placeholder="Search products..."
+      />
+    </div>
+
+    <ul id="product-list" class="product-grid">
+      <li class="product-card" data-name="Paracetamol" data-price="15">
+        <img
+          src="images/Paracetamol.png"
+          alt="Paracetamol medicine"
+        />
+        <div class="product-info">
+          <h3>Paracetamol</h3>
+          <p>Relieves pain and fever.</p>
+          <div class="product-purchase">
+            <span class="price">Le 15</span>
+            <button class="add-btn" type="button">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+
+      <li class="product-card" data-name="Ibuprofen" data-price="25">
+        <img
+          src="images/Ibuprofen.png"
+          alt="Ibuprofen medicine"
+        />
+        <div class="product-info">
+          <h3>Ibuprofen</h3>
+          <p>Reduces pain and swelling.</p>
+          <div class="product-purchase">
+            <span class="price">Le 25</span>
+            <button class="add-btn" type="button">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+
+      <li class="product-card" data-name="Aspirin" data-price="20">
+        <img
+          src="images/Aspirin.png"
+          alt="Aspirin medicine"
+        />
+        <div class="product-info">
+          <h3>Aspirin</h3>
+          <p>Eases aches and headaches.</p>
+          <div class="product-purchase">
+            <span class="price">Le 20</span>
+            <button class="add-btn" type="button">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+
+      <li class="product-card" data-name="Cough Syrup" data-price="30">
+        <img
+          src="images/syrup.png"
+          alt="Cough syrup"
+        />
+        <div class="product-info">
+          <h3>Cough Syrup</h3>
+          <p>Soothes a cough and sore throat.</p>
+          <div class="product-purchase">
+            <span class="price">Le 30</span>
+            <button class="add-btn" type="button">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+
+      <li class="product-card" data-name="Allergy Relief" data-price="15">
+        <img
+          src="images/relief.jpg"
+          alt="Allergy relief product"
+        />
+        <div class="product-info">
+          <h3>Allergy Relief</h3>
+          <p>Relief from sneezing and itching.</p>
+          <div class="product-purchase">
+            <span class="price">Le 15</span>
+            <button class="add-btn" type="button">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+
+      <li class="product-card" data-name="Amoxicillin" data-price="20">
+        <img
+          src="images/Amoxicillin.png"
+          alt="Amoxicillin medicine"
+        />
+        <div class="product-info">
+          <h3>Amoxicillin</h3>
+          <p>Antibiotic; use only as prescribed.</p>
+          <div class="product-purchase">
+            <span class="price">Le 20</span>
+            <button class="add-btn" type="button">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+
+      <li class="product-card" data-name="ORS" data-price="10">
+        <img
+          src="images/ORS.jpg"
+          alt="Oral rehydration salts"
+        />
+        <div class="product-info">
+          <h3>ORS</h3>
+          <p>Helps replenish fluids and salts during dehydration.</p>
+          <div class="product-purchase">
+            <span class="price">Le 10</span>
+            <button class="add-btn" type="button">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+
+      <li class="product-card" data-name="Vitamin C" data-price="25">
+        <img
+          src="images/vitaminc.jpg"
+          alt="Vitamin C supplement"
+        />
+        <div class="product-info">
+          <h3>Vitamin C</h3>
+          <p>Vitamin C supplement for nutritional support.</p>
+          <div class="product-purchase">
+            <span class="price">Le 25</span>
+            <button class="add-btn" type="button">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <section class="cart-section" aria-labelledby="cart-heading">
+      <h2 id="cart-heading">Your Cart</h2>
+      <p id="cart-empty">Your cart is empty</p>
+      <ul id="cart-items" aria-live="polite"></ul>
+      <p class="cart-total">Total: <span id="cart-total">Le 0</span></p>
+      <button id="whatsapp-order" class="whatsapp-order" type="button" disabled>
+        Send Order on WhatsApp
+      </button>
+    </section>
+  </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-main">
+        <section class="footer-about" aria-labelledby="footer-brand">
+          <a class="footer-brand" id="footer-brand" href="index.html">City Stars <span>Pharmacy</span></a>
+          <p>Thoughtful care, quality healthcare essentials, and friendly guidance for our community.</p>
+        </section>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <section class="footer-contact" aria-labelledby="footer-contact-heading">
+          <h2 id="footer-contact-heading">Visit or call us</h2>
+          <address>
+            <p>No. 2 Kings Way Street, Kenema</p>
+            <p><a href="tel:+23274449532">+232 7444 9532</a></p>
+            <p><a href="tel:+23279084646">+232 7908 4646</a></p>
+            <p>Mon–Sat, 8:00 AM–8:00 PM</p>
+          </address>
+        </section>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 City Stars Pharmacy. All rights reserved.</p>
+        <a href="https://wa.me/23274449532" target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp</a>
+      </div>
+    </footer>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
